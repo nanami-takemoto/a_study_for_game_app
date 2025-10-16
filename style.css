@@ -1,62 +1,69 @@
+/* 基本的なリセット */
+body, h2, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif; /* Google Fontsを適用 */
+}
+
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* スクロールバーを非表示に */
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* サイドバー（メニュー） */
+.sidebar {
+    width: 250px;
+    background-color: #a3a3ff; /* 新しい背景色 */
+    border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
+    color: white; /* デフォルトの文字色を白に */
 }
 
-h1 {
+.sidebar-header {
+    padding: 20px;
+    background-color: transparent; /* 親の色を継承 */
     text-align: center;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #c6e2ff; /* 区切り線 */
 }
 
-#board {
-    display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
-    border: 2px solid #333;
-    background-color: #e5ffe5; /* 指定された盤面の色 */
+.sidebar-header h2 {
+    font-size: 24px;
 }
 
-.cell {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
+.game-list {
+    list-style: none;
+    flex-grow: 1;
+    padding-top: 10px;
+}
+
+.game-item {
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.game-item:hover, .game-item.active {
+    background-color: white; /* ホバー/アクティブ時の背景 */
+    color: #a3a3ff; /* ホバー/アクティブ時の文字色 */
+}
+
+
+/* メインコンテンツエリア */
+.main-content {
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
-.cell:hover {
-    background-color: #d4fdd4;
-}
-
-.piece {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-.white {
-    background-color: white;
-}
-
-.purple {
-    background-color: #a8a8ff; /* 指定された石の色 */
-}
-
-.game-info {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#reset-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: 'Noto Sans JP', sans-serif;
+#game-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

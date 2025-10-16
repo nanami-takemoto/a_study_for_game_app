@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>オセロ</title>
+    <title>ゲームセンター</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>オセロ</h1>
-    <div class="game-info">
-        <p>現在のターン: <span id="current-turn"></span></p>
-        <p>スコア: 白 <span id="white-score">2</span> - 紫 <span id="purple-score">2</span></p>
+    <div class="container">
+        <nav class="sidebar">
+            <header class="sidebar-header">
+                <h2>ゲーム一覧</h2>
+            </header>
+            <ul class="game-list">
+                <li class="game-item" data-game-src="games/othello/index.html">オセロ</li>
+                <!-- 今後ここにゲームが追加されます -->
+            </ul>
+        </nav>
+        <main class="main-content">
+            <iframe id="game-frame" src="" frameborder="0"></iframe>
+        </main>
     </div>
-    <div id="board"></div>
-    <button id="reset-button">リセット</button>
-
     <script src="script.js"></script>
 </body>
 </html>
