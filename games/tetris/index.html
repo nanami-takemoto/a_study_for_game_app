@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>テトリス</h1>
+    <div class="main-layout">
+        <div class="game-container">
+            <div class="player-area">
+                <h2>あなた</h2>
+                <canvas id="player-board" width="200" height="400"></canvas>
+                <div class="info">
+                    <p>スコア: <span id="player-score">0</span></p>
+                </div>
+            </div>
+            <div class="cpu-area">
+                <h2>CPU</h2>
+                <canvas id="cpu-board" width="200" height="400"></canvas>
+                <div class="info">
+                     <p>スコア: <span id="cpu-score">0</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="controls-info">
+            <h2>操作方法</h2>
+            <ul>
+                <li><span>&uarr;</span> : 回転</li>
+                <li><span>&larr;</span> : 左に移動</li>
+                <li><span>&rarr;</span> : 右に移動</li>
+                <li><span>&darr;</span> : 下に移動</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
